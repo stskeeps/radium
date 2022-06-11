@@ -41,19 +41,19 @@ use core::sync::atomic::Ordering;
 
 if_atomic! {
     if atomic(8) {
-        use core::sync::atomic::{AtomicBool, AtomicI8, AtomicU8};
+//        use core::sync::atomic::{AtomicBool, AtomicI8, AtomicU8};
     }
     if atomic(16) {
-        use core::sync::atomic::{AtomicI16, AtomicU16};
+//        use core::sync::atomic::{AtomicI16, AtomicU16};
     }
     if atomic(32) {
-        use core::sync::atomic::{AtomicI32, AtomicU32};
+//        use core::sync::atomic::{AtomicI32, AtomicU32};
     }
     if atomic(64) {
-        use core::sync::atomic::{AtomicI64, AtomicU64};
+//        use core::sync::atomic::{AtomicI64, AtomicU64};
     }
     if atomic(ptr) {
-        use core::sync::atomic::{AtomicIsize, AtomicPtr, AtomicUsize};
+//        use core::sync::atomic::{AtomicIsize, AtomicPtr, AtomicUsize};
     }
 }
 
