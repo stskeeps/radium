@@ -82,7 +82,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         // both `target_arch = "riscv32", and have no stable `cfg`-discoverable
         // distinction. As such, the non-atomic RISC-V targets must be
         // discovered here.
-        "riscv32i" | "riscv32imc" | "thumbv6m" => atomics = Atomics::NONE,
+        "riscv32i" | "riscv32im" | "riscv32imc" | "thumbv6m" => atomics = Atomics::NONE,
         _ => {}
     }
 
