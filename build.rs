@@ -73,7 +73,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Add new architecture sections here with their atomic availability.
     #[allow(clippy::match_single_binding, clippy::single_match)]
     match &*arch {
-        "armv5te" | "mips" | "mipsel" | "powerpc" | "riscv32imac" | "thumbv7em" | "thumbv7m"
+        "armv5te" | "riscv32im" | "mips" | "mipsel" | "powerpc" | "riscv32imac" | "thumbv7em" | "thumbv7m"
         | "thumbv8m.main" | "armebv7r" | "armv7r" => atomics.has_64 = false,
         // These ARMv7 targets have 32-bit pointers and 64-bit atomics.
         "armv7" | "armv7a" | "armv7s" => atomics.has_64 = true,
@@ -82,7 +82,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         // both `target_arch = "riscv32", and have no stable `cfg`-discoverable
         // distinction. As such, the non-atomic RISC-V targets must be
         // discovered here.
-        "riscv32i" | "riscv32im" | "riscv32imc" | "thumbv6m" => atomics = Atomics::NONE,
+        "riscv32i" | "riscv32imc" | "thumbv6m" => atomics = Atomics::NONE,
         _ => {}
     }
 
